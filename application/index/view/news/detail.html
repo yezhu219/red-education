@@ -1,0 +1,16 @@
+{include file="public/header,public/nav" /}
+<div class="w layout-container">
+    <div class="layout-left" >
+        <ul>
+            <li class="l-item"><a href="{:url('news/index?type=1')}" class="l-item">新闻动态</a></li>
+            <li class="l-item"><a href="{:url('news/index?type=2')}" class="l-item">培训动态</a></li>
+            <li class="l-item"><a href="{:url('news/index?type=3')}" class="l-item">公告</a></li>
+        </ul>
+    </div>
+    <div class="layout-right " style="padding-right: 100px">
+        <h2 class="tac" style="font-size: 24px;margin-bottom: 20px;">{$data.title}</h2>
+        <p class="tac" style="margin-bottom: 20px;color:#999;"><span>作者：{$data.author}</span> <span style="margin-left: 10px;">发表时间：{$data.create_time}</span></p>
+        <div>{$data.content|raw}</div>
+    </div>
+</div>
+{include file="public/footer" /}

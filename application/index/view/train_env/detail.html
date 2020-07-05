@@ -1,0 +1,16 @@
+{include file="public/header,public/nav" /}
+<div class="w layout-container">
+    <div class="layout-left" >
+        <ul>
+            <ul>
+                <li class="l-item"><a href="">学员风采</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div class="layout-right " style="padding-right: 100px">
+        <h2 class="tac" style="font-size: 24px;margin-bottom: 20px;">{$data.title}</h2>
+        <p class="tac" style="margin-bottom: 20px;color:#999;"><span>作者：{$data.author}</span> <span style="margin-left: 10px;">发表时间：{$data.create_time}</span></p>
+        <div>{$data.des|raw}</div>
+    </div>
+</div>
+{include file="public/footer" /}

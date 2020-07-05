@@ -1,0 +1,39 @@
+{include file="public/header,public/nav" /}
+<div class="w layout-container">
+    <div class="layout-left" >
+        <ul>
+            <li class="l-item"><a href="{:url('news/index?type=1')}" class="l-item">新闻动态</a></li>
+            <li class="l-item"><a href="{:url('news/index?type=2')}" class="l-item">培训动态</a></li>
+            <li class="l-item"><a href="{:url('news/index?type=3')}" class="l-item">公告</a></li>
+        </ul>
+
+    </div>
+    <div class="layout-right">
+        <div class="train-title">新闻动态</div>
+        <div style="display: flex;flex-flow: wrap;justify-content: space-between;">
+            {volist name='list' id='item'}
+                <a href="{:url('news/detail',['id'=>$item.id])}" style="flex: 0 0 48%" >
+                    <div class="new-card">
+                        {if $item.poster}
+                            <img src="{$item.poster}" alt="">
+                        {/if}
+                        <div style="padding: 10px;flex:1">
+                            <h5 style="margin-bottom: 10px">{$item.title}</h5>
+                            <p>{$item.des}</p>
+                        </div>
+                    </div>
+                </a>
+            {/volist}
+            <a href=""   style="flex: 0 0 48%">
+                <div class="new-card">
+                    <img src="__INDEX__/train/ia_100000023.jpeg" alt="">
+                    <div style="padding: 10px;flex:1">
+                        <h5 style="margin-bottom: 10px">文章标题</h5>
+                        <p>描述撒打发撒打发撒打发</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}

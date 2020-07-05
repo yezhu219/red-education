@@ -1,0 +1,118 @@
+{include file="public/header,public/nav" /}
+<div class="submian f2f2f2 ">
+    <div class="w1200 clearfix layout-container">
+        <!--左侧区域 start-->
+        <div class="  layout-left">
+            <ul>
+                <li class="l-item"><a href="">联系我们</a></li>
+            </ul>
+        </div>
+        <!--左侧区域 end-->
+        <!--右侧区域 start-->
+        <div class="subright fr" style="margin-left: 50px;border:none;">
+            <div class="title clearfix">
+<!--                <div class="sobtitle fr">您现在所在位置：<a href="/">首页</a> > <a href="/lxfs.html">联系我们</a></div>-->
+                <div class="train-title">联系我们</div>
+            </div>
+            <div class="aboutlist clearfix" >
+                <table style="width:100%;" cellpadding="0" cellspacing="0" border="0" class="ke-zeroborder"
+                       bordercolor="#000000">
+                    <tbody>
+                    <tr>
+                        <td style="text-align:center;width:400px;">
+                            <p>
+                                <img src="static/picture/20181127143545_1677.jpg" alt="" />
+                            </p>
+                            <p>
+                                <span style="font-size:24px;"><strong>电话</strong></span>
+                            </p>
+                            <p>
+                  <span style="font-size:14px;"><span
+                          style="color:#39454D;font-family:微软雅黑, sans-serif, Helvetica, Arial;font-variant-numeric:normal;font-variant-east-asian:normal;line-height:19.5px;white-space:normal;widows:1;font-size:14px;">400-837-3798</span></span>
+                            </p>
+                            <p>
+                                <span style="font-size:16px;"><br /> </span>
+                            </p>
+                        </td>
+                        <td style="text-align:center;width:400px;border-left:1px solid #ccc;">
+                            <p>
+                                <img src="static/picture/20181127143625_1521.jpg" alt="" />
+                            </p>
+                            <p>
+                                <strong><span style="font-size:24px;">地址</span></strong>
+                            </p>
+                            <p>
+                                <span style="font-size:16px;"> </span>
+                            </p>
+                            <p class="MsoNormal">
+                                <span style="font-family:微软雅黑;font-size:14px;">湖南省韶山市毛母文化旅游城</span><span
+                                    style="font-size:14px;">2栋1118号</span>
+                            </p>
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                <span style="font-size:16px;"></span>
+                            </p>
+                        </td>
+                        <td style="text-align:center;width:400px;border-left:1px solid #ccc;">
+                            <p>
+                                <img src="static/picture/20181127143640_4011.jpg" alt="" />
+                            </p>
+                            <p>
+                                <span style="font-size:24px;"><strong>邮箱</strong></span>
+                            </p>
+                            <p>
+                  <span style="font-size:16px;"><span style="font-size:14px;">sswypx@163.com</span><br />
+                  </span>
+                            </p>
+                            <div>
+                                <p class="MsoNormal">
+                                    <span style="font-size:14px;">sswypx@qq.com</span>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br />
+            </div>
+            <div id="allmap" style="width:100%; height:400px; overflow:hidden; margin-top:20px;box-shadow: 1px 0px 5px rgba(0,0,0,.3);"></div>
+            <script type="text/javascript" src="__INDEX__/js/d14aac3c30ef4b928687ed89484801c4.js"></script>
+            <script type="text/javascript">
+                // 百度地图API功能
+                var map = new BMap.Map("allmap");
+                // 创建地址解析器实例
+                var myGeo = new BMap.Geocoder();
+                // 将地址解析结果显示在地图上,并调整地图视野
+                myGeo.getPoint("河南省信阳市新县首府路30号", function (point) {
+                    if (point) {
+
+                        var point = new BMap.Point(114.881041, 31.626982);
+                        var marker = new BMap.Marker(point);  // 创建标注
+                        map.addOverlay(marker);// 将标注添加到地图中
+                        map.centerAndZoom(point, 17);
+                        map.enableKeyboard();//启用键盘上下左右键移动地图
+                        map.enableScrollWheelZoom(); //启用滚轮放大缩小
+
+                        var opts = {
+                            width: 300,     // 信息窗口宽度
+                            height: 100,     // 信息窗口高度
+                            title: "河南弘扬大别山精神文化传播有限公司", // 信息窗口标题
+                            enableMessage: true,//设置允许信息窗发送短息
+                            message: ""
+                        }
+                        var infoWindow = new BMap.InfoWindow("地址：河南省信阳市新县首府路30号", opts);  // 创建信息窗口对象
+                        map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        marker.addEventListener("click", function () {
+                            map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        });
+                    }
+                }, "长沙市");
+            </script>
+        </div>
+        <!--右侧区域 end-->
+        <div class="clear"></div>
+    </div>
+</div>
+{include file="public/footer" /}

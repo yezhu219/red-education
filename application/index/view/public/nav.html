@@ -1,0 +1,46 @@
+<!--头部-->
+<div class="header">
+    <div class="htop">
+
+    </div>
+    <div class="hcont">
+        <div class="container">
+            <div class="dlogo">
+                <div class="dingbutu"><a href="/" title="井冈山红色文化培训中心"><img src="__INDEX__/picture/logog.png"></a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!--头部-->
+
+<!--导航-->
+<div class="navBox">
+    <div class="container" style="text-align: center;">
+        <ul class="nav" style="display: inline-block;">
+            <li id="nav_10001" ><a href='{:url("index/index")}' title='网站首页' >网站首页</a></li>
+            <li id='nav_209' ><a href='{:url("news/index")}'  title='新闻动态'>新闻动态</a></li>
+            <li id='nav_213' ><a href='{:url("trainModel/index")}'  title='培训模式'>培训模式</a></li>
+            <li id='nav_258' ><a href='{:url("trainEnv/index")}'  title='培训资源'>培训资源</a></li>
+            <li id='nav_212' ><a href='{:url("course/index")}'  title='课程安排'>课程安排</a></li>
+            <li id='nav_211' ><a href='{:url("student/index")}'  title='学员风采'>学员风采</a></li>
+            <li id='nav_268' ><a href='{:url("servise/index")}'  title='服务保障'>服务保障</a></li>
+            <li id='nav_217' ><a href='{:url("about/index")}'  title='联系我们'>联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        let path = location.pathname
+        console.log(path,'path')
+        $('.nav li').each(function () {
+           let cpath = $(this).children('a').attr('href')
+            if(cpath == path) {
+                $(this).addClass('cur')
+            }else {
+                $(this).removeClass('cur')
+            }
+        })
+    })
+</script>
+<!--导航-->
